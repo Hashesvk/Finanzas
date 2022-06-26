@@ -1,0 +1,94 @@
+<div class="container">
+
+    <div class="row mt-5">
+        <div class="row">
+            <app-sidebar></app-sidebar>
+        </div>
+    </div>
+    <div class="container">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>id_bono</th>
+                    <th>Bono</th>
+                    <th>Interes</th>
+                    <th>Cuota</th>
+                    <th>Amort</th>
+                    <th>Prima</th>
+                    <th>Escudo</th>
+                    <th>Flujo Emisor</th>
+                    <th>Flujo Bonista</th>
+                    <th>Flujo Actualizado</th>
+                    <th>FA x Plazo</th>
+                    <th>Factor Convexidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let bono of bonos">
+                    <td><span>{{bono.id_bono}}</span></td>
+                    <td><span>{{bono.bono}}</span></td>
+                    <td><span>{{bono.interes}}</span></td>
+                    <td><span>{{bono.cuota}}</span></td>
+                    <td><span>{{bono.amort}}</span></td>
+                    <td><span>{{bono.prima}}</span></td>
+                    <td><span>{{bono.Escudo}}</span></td>
+                    <td><span>{{bono.FlujoEmisor}}</span></td>
+                    <td><span>{{bono.FlujoBonista}}</span></td>
+                    <td><span>{{bono.FlujoAct}}</span></td>
+                    <td><span>{{bono.FaxPlazo}}</span></td>
+                    <td><span>{{bono.FactorConvexidad}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>id_bono</th>
+                    <th>Frecuencia de bono</th>
+                    <th>Capitalizacion</th>
+                    <th>Periodos</th>
+                    <th>Tea</th>
+                    <th>Tes</th>
+                    <th>COK</th>
+                    <th>Precio</th>
+                    <th>Utilidad</th>
+                    <th>Costes del emisor</th>
+                    <th>Costes del bonista </th>
+                    <th>Convexidad</th>
+                    <th>Duracion</th>
+                    <th>Total</th>
+                    <th>Duracion modificado</th>
+                    <th>TCEABonista</th>
+                    <th>TCEABonista</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let r of resultados">
+                    <td><span>{{r.id_bono}}</span></td>
+                    <td><span>{{r.frecuenciadeabono}}</span></td>
+                    <td><span>{{r.capitalizacion}}</span></td>
+                    <td><span>{{r.periodos}}</span></td>
+                    <td><span>{{r.tea}}</span></td>
+                    <td><span>{{r.tes}}</span></td>
+                    <td><span>{{r.cok}}</span></td>
+                    <td><span>{{r.precio}}</span></td>
+                    <td><span>{{r.utilidad}}</span></td>
+                    <td><span>{{r.costesEmisor}}</span></td>
+                    <td><span>{{r.costesBonista}}</span></td>
+                    <td><span>{{r.convexidad}}</span></td>
+                    <td><span>{{r.duracion}}</span></td>
+                    <td><span>{{r.total}}</span></td>
+                    <td><span>{{r.duracionmod}}</span></td>
+                    <td><span>{{r.TCEABonista}}</span></td>
+                    <td><span>{{r.TCEAEmisor}}</span></td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

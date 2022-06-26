@@ -1,0 +1,113 @@
+<main> 
+    <div class="box">
+        <div class="inner-box">
+            <div class="forms-wrap">
+                <form [formGroup]="signinForm" autocomplete="off" class="sign-in-form" (ngSubmit)="Iniciar()">
+                    <div class="logo">
+                        <img src="./../../assets/img/logo.png" alt="TuBono" />
+                    </div>
+    
+                    <div class="heading">
+                        <h2>Bienvenido</h2>
+                        <h6>Aún no estás con nosotros?</h6>
+                        <a class="toggle">Regístrate</a>
+                    </div>
+    
+                    <div class="actual-form">
+                        <div class="input-wrap">
+                            <input required type="text" formControlName="nombre" id="username"
+                                class="input-field" autofocus="true"
+                                /> <label>Nombre</label>
+                                <small class="text-danger" *ngIf="signinForm.hasError('required','nombre') && submitted2"
+                                >Nombre requerido</small>
+                                <!-- <small class="text-danger" *ngIf="signinForm.hasError('minLength','nombre')"
+                                >Longitud minima de 4 letra</small> -->
+                        </div>
+    
+                        <div class="input-wrap">
+                            <input required type="password" formControlName="contraseña" id="password"
+                                class="input-field" />
+                            <label>Contraseña</label>
+                            <small class="text-danger" *ngIf="signinForm.hasError('required','contraseña') && submitted2"
+                            >Nombre requerido</small>
+                            <!-- <small class="text-danger" *ngIf="signinForm.hasError('minLength','contraseña')"
+                            >Longitud minima de 4 letra</small> -->
+                        </div>
+    
+                        <button class="sign-btn" type="submit" >Iniciar Sesión
+                        </button>
+    
+                        <p class="text">
+                            Este proyecto fue realizado por alumnos de UPC para el curso de Finanzas e Ingeniería Económica
+                        </p>
+                    </div>
+                </form>
+    
+                <form  [formGroup]="signupForm" class="sign-up-form"(ngSubmit)="Registrar()">
+                    <div class="logo">
+                        <img src="./../../assets/img/logo.png" alt="TuBono" />
+                    </div>
+                    
+                    <div class="heading">
+                        <h2>Empecemos</h2>
+                        <h6>Ya tienes una cuenta?</h6>
+                        <a class="toggle">Iniciar Sesión</a>
+                    </div>
+    
+    
+    
+                    <div class="actual-form">
+                        <div class="input-wrap">
+
+                            <input formControlName="nombre" type="text" class="  form-control input-field" 
+                            id="nombre"
+                            >
+                                <label>Nombre</label>
+                            <small class="text-danger" *ngIf="signupForm.hasError('required','nombre') && submitted"
+                            >Nombre requerido</small>
+                           <!--  <small class="text-danger" *ngIf="signupForm.hasError('minlength','nombre') && submitted"
+                            >Longitud minima de 4 letra</small> -->
+                        </div>
+                       
+                        <div class="input-wrap">
+                            <input formControlName="contraseña" type="password"  
+                            class="form-control input-field"
+                            id="contrasena">
+                            <label>Contraseña</label>
+                            <small class="text-danger" *ngIf="signupForm.hasError('required','contraseña') && submitted"
+                            >Nombre requerido</small>
+                            <!-- <small class="text-danger" *ngIf="signupForm.hasError('minlength','contraseña') && submitted"
+                            >Longitud minima de 4 letra</small> -->
+                        </div>
+                        
+                        <button type="submit" class="sign-btn"> Registrarme</button>
+    
+                        <p class="text">
+                            Este proyecto fue realizado por alumnos de UPC para el curso de Finanzas e Ingeniería Económica
+                        </p>
+                    </div>
+                </form>
+            </div>
+    
+            <div class="carousel">
+                <div class="images-wrapper">
+                    <img src="/img/imagen1.png" class="image img-1 show" alt="" /> <img
+                        src="/img/imagen2.png" class="image img-2" alt="" />
+                </div>
+    
+                <div class="text-slider">
+                    <div class="text-wrap">
+                        <div class="text-group">
+                            <h2 style="color: white;">Calcula tu bono</h2>
+                            <h2 style="color: white;">Organiza tu cartera</h2>
+                        </div>
+                    </div>
+    
+                    <div class="bullets">
+                        <span class="active" data-value="1"></span> <span data-value="2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>

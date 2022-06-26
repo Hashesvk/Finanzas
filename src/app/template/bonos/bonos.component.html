@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="row">
+      <app-sidebar></app-sidebar>
+    </div>
+  </div>
+
+  <form [formGroup]="bonoForm" (ngSubmit)="RegistrarBono()">
+    <div class="form-group">
+      <div *ngFor="let item of templateInputs ">
+        <label for={{item.valor}}>{{item.text}}</label>
+        <input
+          *ngIf="item.valor != 'frecCupon' && item.valor != 'tipoMoneda' && item.valor != 'capitalizacion' &&  item.valor != 'dias' && item.valor != 'tipoTasa'"
+          required type="number" min= "0" class="form-control" formControlName="{{item.valor}}" id="item"
+          placeholder={{item.text}}>
+
+        <select *ngIf="item.valor == 'frecCupon' || item.valor == 'capitalizacion' " class="form-select"
+          aria-label="Default select example" formControlName="{{item.valor}}">
+          <option value="mensual">Mensual</option>
+          <option value="bimestral">Bimestral</option>
+          <option value="trimestral">Trimestral</option>
+          <option value="cuatrimestral">Cuatrimestral</option>
+          <option value="semestral">Semestral</option>
+          <option value="anual">Anual</option>
+        </select>
+        <select *ngIf="item.valor == 'tipoMoneda'" class="form-select" aria-label="Default select example"
+          formControlName="{{item.valor}}">
+          <option value="€">Euro</option>
+          <option value="S/">Sol</option>
+          <option value="$">Dolar</option>
+        </select>
+        <select *ngIf="item.valor == 'dias'" class="form-select" aria-label="Default select example"
+          formControlName="{{item.valor}}">
+          <option value=365>365</option>
+          <option value=360>360</option>
+        </select>
+        <select *ngIf="item.valor == 'tipoTasa'" class="form-select" aria-label="Default select example"
+          formControlName="{{item.valor}}">
+          <option value="nominal">nominal</option>
+          <option value="efectiva">efectiva</option>
+        </select>
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col-2">
+        <button (click)="calculo()" type="submit" class="btn btn-primary">Calcular</button>
+      </div>
+      <div class="col">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+    </div>
+  </form>
+
+
+
+</div>
